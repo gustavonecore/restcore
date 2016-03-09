@@ -1,0 +1,2 @@
+# restcore
+Simple jquery restclient
