@@ -21,6 +21,7 @@
 			{
 				if (options && options.headers)
 				{
+					var headers = options.headers;
 					for (var i in headers)
 					{
 						xhr.setRequestHeader(headers[i].header, headers[i].value);
