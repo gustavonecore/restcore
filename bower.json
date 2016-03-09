@@ -1,0 +1,28 @@
+{
+  "name": "Restcore",
+  "dependencies": {
+    "jquery": "1.11.0"
+  },
+  "homepage": "https://github.com/gustavonecore/restcore",
+  "authors": [
+    "Gustavo Delgado <gustavod@digintent.com>"
+  ],
+  "description": "Simple Rest client for Jquery projects",
+  "main": "restcore.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "restclient",
+    "api",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
