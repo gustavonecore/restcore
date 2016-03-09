@@ -5,7 +5,7 @@
   },
   "homepage": "https://github.com/gustavonecore/restcore",
   "authors": [
-    "Gustavo Delgado <gustavod@digintent.com>"
+    "Gustavo Delgado <gustavo.uach@gmail.com>"
   ],
   "description": "Simple Rest client for Jquery projects",
   "main": "restcore.js",
