@@ -1,6 +1,12 @@
 RESTCORE - Simple Rest Client
 ===================
 This is a simple Jquery plugin for making calls against API services.
+Install using bower
+-------
+
+    bower install restcore
+
+Add the script to your page **after the jquery library**  and it's done, you can play with it ;)
 
 How to use
 -------
