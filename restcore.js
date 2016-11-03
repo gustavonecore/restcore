@@ -9,6 +9,8 @@
  */
 (function($)
 {
+	$.restCoreMiddleware = null;
+
 	/**
 	 * Make an HTTP request
 	 *
@@ -34,6 +36,8 @@
 			throw Error('You must define the [next] callback');
 		}
 
+		var middleware = $.restCoreMiddleware;
+
 		$.ajax({
 			data: query,
 			beforeSend: function(xhr)
@@ -53,16 +57,42 @@
 			type: method.toUpperCase(),
 			success: function (response)
 			{
-				next(null, response);
+
+				if (middleware)
+				{
+					middleware(null, response, function()
+					{
+						next(null, response);
+					});
+				}
+				else
+				{
+					next(null, response);
+				}
 			},
 			error: function(xhr,status,error)
 			{
-				next({
-					error: error,
-					xhr: xhr,
-					status: status
-				}, null);
+				if (middleware)
+				{
+					middleware({error: error, xhr: xhr,status: status}, null, function()
+					{
+						next({
+							error: error,
+							xhr: xhr,
+							status: status
+						}, null);
+					});
+				}
+				else
+				{
+					next({
+						error: error,
+						xhr: xhr,
+						status: status
+					}, null);
+				}
 			}
 		});
 	};
+
 }(jQuery));
